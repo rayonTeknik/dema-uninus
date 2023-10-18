@@ -18,18 +18,20 @@
           <table class="table align-items-center mb-0">
             <thead>
               <tr>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">No</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Images</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Title</th>
                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
               </tr>
             </thead>
             <tbody>
+              @foreach ($home as $item)
               <tr>
-                @foreach ($home as $item)
+                <td class="d-flex justify-content-center">{{ $loop->iteration }}</td>
                 <td>
                   <div class="d-flex px-2 py-1">
                     <div>
-                      <img src="{{ asset('img/'.$item->img) }}" class="avatar avatar-sm me-3 border-radius-lg" alt="user1">
+                      <img src="{{ asset('img/'.$item->img) }}" class="avatar avatar-sm me-3 border-radius-lg" style="object-fit: cover">
                     </div>
                     {{-- <div class="d-flex flex-column justify-content-center">
                       <h6 class="mb-0 text-sm">John Michael</h6>
@@ -43,11 +45,11 @@
                 </td>
 
                 <td class="align-middle text-center text-sm">
-                  <span class="badge badge-sm bg-gradient-success">Edit</span>
+                  <a href="/admin/home/edit/{{ $item->id }}" class="badge badge-sm bg-gradient-warning" >Edit</a>
                 </td>
+              </tr>
                 @endforeach
 
-              </tr>
             </tbody>
           </table>
         </div>

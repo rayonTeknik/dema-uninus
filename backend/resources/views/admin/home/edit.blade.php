@@ -7,16 +7,17 @@
         <div class="col-12">
             <div class="card my-4">
               <div class="card-body">
-                <form action="{{ route('store.home') }}" method="post" enctype="multipart/form-data">
-                  @csrf
+                <form action="{{ route('update.home', $home->id) }}" method="post" enctype="multipart/form-data">
+
+                  @csrf @method('put')
                   <div class="input-group input-group-outline my-3">
                     <label class="form-label">Judul</label>
-                    <input type="text" class="form-control" name="title">
+                    <input type="text" class="form-control" name="title" value="{{ $home->title }}">
                   </div>
                   
                   <label class="form-label my-3">Gambar Format : JPG, PNG, JPEG</label>
                   <div class="input-group input-group-outline ">
-                    <input type="file" class="form-control" name="img">
+                    <input type="file" class="form-control" name="img" value="{{ $home->img }}">
                   </div>
                   {{-- <div class="input-group input-group-outline mb-3">
                     <label class="form-label">Password</label>

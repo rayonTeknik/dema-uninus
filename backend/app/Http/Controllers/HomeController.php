@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Home;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class HomeController extends Controller
 {
@@ -37,31 +38,68 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Home $home)
-    {
-        //
+      $home = new Home();
+      
+      $home->title = $request->input('title'); 
+
+      
+      if ($request->hasFile('img')) {
+        $image = $request->file('img');
+        $newFileName = 'home' . '_' . $request->name . '_' . now()->timestamp . '.' . 
+        $image->getClientOriginalExtension();
+
+        // Simpan gambar yang diunggah ke direktori penyimpanan sambil mengkompresi ulang
+        $compressedImage = Image::make($image)->resize(700, null, function ($constraint) {
+          $constraint->aspectRatio();
+          })->save(public_path('img/' . $newFileName));
+
+        $home->img =  $newFileName;
+      }
+      
+      $home->save();
+
+      // Redirect ke halaman yang sesuai setelah berhasil menyimpan data
+      return redirect()->route('index.home');
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Home $home)
+    public function edit($id, Home $home)
     {
-        //
+        $home = Home::find($id);
+        return view('admin.home.edit', compact('home'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Home $home)
+    public function update($id, Request $request, Home $home)
     {
-        //
+
+      $home = Home::find($id);
+      
+      $home->title = $request->input('title'); 
+
+      
+      if ($request->hasFile('img')) {
+        $image = $request->file('img');
+        $newFileName = 'home' . '_' . $request->name . '_' . now()->timestamp . '.' . 
+        $image->getClientOriginalExtension();
+
+        // Simpan gambar yang diunggah ke direktori penyimpanan sambil mengkompresi ulang
+        $compressedImage = Image::make($image)->resize(700, null, function ($constraint) {
+          $constraint->aspectRatio();
+          })->save(public_path('img/' . $newFileName));
+
+        $home->img =  $newFileName;
+      }
+      
+      $home->save();
+
+      // Redirect ke halaman yang sesuai setelah berhasil menyimpan data
+      return redirect()->route('index.home');
     }
 
     /**
