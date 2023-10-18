@@ -1,4 +1,4 @@
-GET http://localhost:4000/Pasiens
+GET http://localhost:8000/admin/home
 
 ###
 GET http://localhost:4000/Pasiens/1
