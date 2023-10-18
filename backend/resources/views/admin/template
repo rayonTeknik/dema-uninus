@@ -1,0 +1,13 @@
+@section('title')
+    {{ 'Dashboard' }}
+@endsection
+@extends('admin.layout')
+@section('content')
+    <div class="row">
+        <div class="col-12">
+            <div class="card my-4">
+
+            </div>
+        </div>
+    </div>
+@endsection

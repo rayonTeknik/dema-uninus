@@ -10,9 +10,18 @@ class HomeController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function dashboard ()
     {
         return view('admin.index');
+    }
+
+        /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+      $home = Home::all();
+        return view('admin.home.index', compact('home'));
     }
 
     /**
@@ -20,7 +29,7 @@ class HomeController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.home.create');
     }
 
     /**
