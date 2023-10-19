@@ -1,14 +1,12 @@
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import './App.css';
+import Header from './components/Header';
 
 const App = () => {
   return (
-    
     <>
-      <i className='bi bi-list'></i>
-      <button className='btn'>Button</button>
+      <Header/>
     </>
-
   )
 }
 
