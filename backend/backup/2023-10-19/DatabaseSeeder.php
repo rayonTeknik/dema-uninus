@@ -26,6 +26,5 @@ class DatabaseSeeder extends Seeder
         $this->call(HomesTableSeeder::class);
         $this->call(PengurusesTableSeeder::class);
         $this->call(GalerisTableSeeder::class);
-        $this->call(AspirasisTableSeeder::class);
     }
 }

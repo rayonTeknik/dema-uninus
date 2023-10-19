@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AspirasiController;
 use App\Http\Controllers\GaleriController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -45,3 +46,9 @@ Route::post('/admin/galeri/store', [GaleriController::class, 'store'])->name('st
 Route::get('/admin/galeri/edit/{id}', [GaleriController::class, 'edit'])->name('edit.galeri');
 Route::put('/admin/galeri/update/{id}', [GaleriController::class, 'update'])->name('update.galeri');
 Route::delete('/admin/galeri/destroy/{id}', [GaleriController::class, 'destroy'])->name('galeri.destroy');
+
+// CRUD ASPIRASI
+Route::get('/admin/aspirasi', [AspirasiController::class, 'index'])->name('index.aspirasi');
+Route::get('/admin/aspirasi/create', [AspirasiController::class, 'create'])->name('create.aspirasi');
+Route::post('/admin/aspirasi/store', [AspirasiController::class, 'store'])->name('store.aspirasi');
+Route::get('/admin/aspirasi/show/{id}', [AspirasiController::class, 'show'])->name('show.aspirasi');

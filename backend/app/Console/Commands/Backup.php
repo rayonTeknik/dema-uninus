@@ -54,6 +54,15 @@ class Backup extends Command
         'homes' => [
             'homes',
         ],
+        'penguruses' => [
+            'penguruses',
+        ],
+        'galeris' => [
+            'galeris',
+        ],
+        'aspirasis' => [
+            'aspirasis',
+        ],
         
     ];    
     if ($opt_users == 1 || $arg_type == 'users') echo shell_exec('php artisan iseed users --force');
