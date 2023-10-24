@@ -44,7 +44,7 @@ class PengurusController extends Controller
         $image->getClientOriginalExtension();
 
         // Simpan gambar yang diunggah ke direktori penyimpanan sambil mengkompresi ulang
-        $compressedImage = Image::make($image)->resize(700, null, function ($constraint) {
+        $compressedImage = Image::make($image)->resize(1000, null, function ($constraint) {
           $constraint->aspectRatio();
           })->save(public_path('img/' . $newFileName));
 
@@ -85,7 +85,7 @@ class PengurusController extends Controller
         $image->getClientOriginalExtension();
 
         // Simpan gambar yang diunggah ke direktori penyimpanan sambil mengkompresi ulang
-        $compressedImage = Image::make($image)->resize(700, null, function ($constraint) {
+        $compressedImage = Image::make($image)->resize(1000, null, function ($constraint) {
           $constraint->aspectRatio();
           })->save(public_path('img/' . $newFileName));
 
