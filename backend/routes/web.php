@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AspirasiController;
+use App\Http\Controllers\BeasiswaController;
 use App\Http\Controllers\GaleriController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -52,3 +53,12 @@ Route::get('/admin/aspirasi', [AspirasiController::class, 'index'])->name('index
 Route::get('/admin/aspirasi/create', [AspirasiController::class, 'create'])->name('create.aspirasi');
 Route::post('/admin/aspirasi/store', [AspirasiController::class, 'store'])->name('store.aspirasi');
 Route::get('/admin/aspirasi/show/{id}', [AspirasiController::class, 'show'])->name('show.aspirasi');
+
+// CRUD BEASISWA
+Route::get('/admin/beasiswa', [BeasiswaController::class, 'index'])->name('index.beasiswa');
+Route::get('/admin/beasiswa/create', [BeasiswaController::class, 'create'])->name('create.beasiswa');
+Route::post('/admin/beasiswa/store', [BeasiswaController::class, 'store'])->name('store.beasiswa');
+Route::get('/admin/beasiswa/show/{id}', [BeasiswaController::class, 'show'])->name('show.beasiswa');
+Route::get('/admin/beasiswa/edit/{id}', [BeasiswaController::class, 'edit'])->name('edit.beasiswa');
+Route::put('/admin/beasiswa/update/{id}', [BeasiswaController::class, 'update'])->name('update.beasiswa');
+Route::delete('/admin/beasiswa/destroy/{id}', [BeasiswaController::class, 'destroy'])->name('beasiswa.destroy');

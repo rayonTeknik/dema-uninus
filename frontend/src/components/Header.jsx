@@ -1,49 +1,69 @@
+import { useState, useEffect } from "react";
 
-const Header = () => {
+const THEMES = [
+  "light", "dark", "cupcake", "bumblebee", "emerald", "corporate", "synthwave", "retro",
+  "cyberpunk", "valentine", "halloween", "garden", "forest", "aqua", "lofi", "pastel",
+  "fantasy", "wireframe", "black", "luxury", "dracula", "cmyk", "autumn", "business",
+  "acid", "lemonade", "night", "coffee", "winter"];
+
+export default function Header() {
+  const [theme, setTheme] = useState('light');
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
+  const handleThemeChange = (e) => {
+    const val = e.target.getAttribute('data-set-theme');
+    setTheme(val);
+  };
+
   return (
-    <header className="sticky top-0 z-50 py-2 bg-base-100">
+    <header className="sticky top-0 z-50 py-1 bg-base-100">
       <div className="container">
-      <div className="navbar bg-base-100">
-        <div className="navbar-start">
-          <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost lg:hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-            </label>
-            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-              <li><a>Item 1</a></li>
-              <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
-                </ul>
-              </li>
-              <li><a>Item 3</a></li>
-            </ul>
+        <div className="navbar bg-base-100">
+          <div className="navbar-start">
+            <div className="dropdown">
+              <label tabIndex={0} className="btn primary btn-circle lg:hidden mr-1">
+                <i className="bi bi-list text-2xl"></i>
+              </label>
+              <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                <li><a href="#!">Home</a></li>
+                <li><a href="#!">About Us</a></li>
+                <li><a href="#!">Services</a></li>
+                <li><a href="#!">Blogs</a></li>
+                <li><a href="#!">Contact</a></li>
+              </ul>
+    
+            </div>
+
+            <a className="btn btn-ghost normal-case text-xl">
+              <img src="public/dema.png" className="w-11 mr-3" alt="Dema Uninus" /> Dema Uninus
+            </a>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">
-          <img src="public/dema.png" className="w-10"></img>Dema Uninus</a>
-        </div>
-        <div className="navbar-end hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li><a>Item 1</a></li>
-            <li tabIndex={0}>
-              <details>
-                <summary>Parent</summary>
-                <ul className="p-2">
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
-                </ul>
-              </details>
-            </li>
-            <li><a>Item 3</a></li>
-          </ul>
-          <a className="btn">Button</a>
+          <div className="navbar-end hidden lg:flex">
+            <ul className="menu menu-horizontal p-0 font-medium">
+              <li><a href="#!" className="mr-2">Home</a></li>
+              <li><a href="#!" className="mr-2">About Us</a></li>
+              <li><a href="#!" className="mr-2">Services</a></li>
+              <li><a href="#!" className="mr-2">Blogs</a></li>
+              <li><a href="#!" className="mr-2">Contact</a></li>
+            </ul>
+            <div className="dropdown dropdown-end">
+              <label tabIndex={0} className="btn"><i className="bi bi-moon"></i></label>
+              <ul tabIndex={0} className="dropdown-content mt-1 w-52 max-h-96 overflow-y-auto menu menu-compact p-2  bg-base-200 shadow rounded-box">
+              {
+                THEMES.map((theme, i) => (
+                  <li key={theme + i}>
+                    <button data-set-theme={theme} onClick={handleThemeChange}>{theme}</button>
+                  </li>
+                ))
+              }
+            </ul>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </header>
-  )
+    </header>
+  );
 }
-
-export default Header
