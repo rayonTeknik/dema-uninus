@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AspirasiController;
 use App\Http\Controllers\BeasiswaController;
+use App\Http\Controllers\frontend\PostController;
 use App\Http\Controllers\GaleriController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -21,6 +22,12 @@ use App\Http\Controllers\PengurusController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/post',[PostController::class, 'index']);
+
+
+
 
 Route::get('/admin/dashboard',[HomeController::class, 'dashboard'])->name('dashboard.admin');
 
