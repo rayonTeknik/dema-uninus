@@ -8,6 +8,7 @@ import Features from "@/components/Features";
 import Hero from "@/components/Hero";
 import Pricing from "@/components/Pricing";
 import Testimonials from "@/components/Testimonials";
+import Companies from "@/components/Companies";
 import Video from "@/components/Video";
 import { Inter } from "@next/font/google";
 
@@ -20,6 +21,7 @@ export default function Home() {
       <Hero />
       <Features />
       <Video />
+      <Companies/>
       <Brands />
       <AboutSectionOne />
       <AboutSectionTwo />
