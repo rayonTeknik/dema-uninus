@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryPostController;
 use App\Http\Controllers\AspirasiController;
 use App\Http\Controllers\BeasiswaController;
 use App\Http\Controllers\frontend\PostController;
@@ -69,3 +70,12 @@ Route::get('/admin/beasiswa/show/{id}', [BeasiswaController::class, 'show'])->na
 Route::get('/admin/beasiswa/edit/{id}', [BeasiswaController::class, 'edit'])->name('edit.beasiswa');
 Route::put('/admin/beasiswa/update/{id}', [BeasiswaController::class, 'update'])->name('update.beasiswa');
 Route::delete('/admin/beasiswa/destroy/{id}', [BeasiswaController::class, 'destroy'])->name('beasiswa.destroy');
+
+// CRUD CATEGORY BLOG ADMIN
+Route::get('/admin/category', [CategoryPostController::class, 'index'])->name('index.categoryPost');
+Route::get('/admin/category/create', [CategoryPostController::class, 'create'])->name('create.categoryPost');
+Route::post('/admin/category/store', [CategoryPostController::class, 'store'])->name('store.categoryPost');
+Route::get('/admin/category/show/{id}', [CategoryPostController::class, 'show'])->name('show.categoryPost');
+Route::get('/admin/category/edit/{id}', [CategoryPostController::class, 'edit'])->name('edit.categoryPost');
+Route::put('/admin/category/update/{id}', [CategoryPostController::class, 'update'])->name('update.categoryPost');
+Route::delete('/admin/category/destroy/{id}', [CategoryPostController::class, 'destroy'])->name('categoryPost.destroy');

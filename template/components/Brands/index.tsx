@@ -24,13 +24,25 @@ const brandsData: Brand[] = [
     id: 4,
     name: "GrayGrids",
     href: "https://graygrids.com",
-    image: "/images/brands/graygrids.svg",
+    image: "/images/brands/birdseye.svg",
   },
   {
     id: 5,
     name: "TailAdmin",
     href: "https://tailadmin.com",
-    image: "/images/brands/tailadmin.svg",
+    image: "/images/brands/break.svg",
+  },
+  {
+    id: 6,
+    name: "TailAdmin",
+    href: "https://tailadmin.com",
+    image: "/images/brands/keddar.svg",
+  },
+  {
+    id: 7,
+    name: "TailAdmin",
+    href: "https://tailadmin.com",
+    image: "/images/brands/shield.svg",
   },
 ];
 
