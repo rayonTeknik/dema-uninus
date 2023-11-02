@@ -1,6 +1,8 @@
 import Link from "next/link";
+import getDataHome from "../api/api";
 
-const Hero = () => {
+export default async function Hero () {
+  const home = await getDataHome();
   return (
     <>
       <section
@@ -15,7 +17,9 @@ const Hero = () => {
                 data-wow-delay=".2s"
               >
                 <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
-                Free and Open-Source Next.js Template for Startup & SaaS
+                {home.map((item, index) => (
+                    <span key={index}>{item.title}</span>
+                  ))}
                 </h1>
                 <p className="mb-12 text-base font-medium !leading-relaxed text-body-color dark:text-white dark:opacity-90 sm:text-lg md:text-xl">
                 Startup is free Next.js template for startups and SaaS business websites comes with all the essential pages, components, and sections you need to launch a complete business website, built-with Next 13.x and Tailwind CSS.
@@ -284,4 +288,5 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+
+// export default Hero;

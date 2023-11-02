@@ -170,6 +170,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         'Intervention\Image\ImageServiceProvider',
         Orangehill\Iseed\IseedServiceProvider::class,
+        // JeroenNoten\LaravelCkEditor\ServiceProvider::class,
 
     ])->toArray(),
 

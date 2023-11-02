@@ -10,6 +10,9 @@ class Post extends Model
 {
     use HasFactory, Sluggable;
     protected $guarded = [] ;
+    //     protected $casts = [
+    //     'status' => 'integer',
+    // ];
 
     public function sluggable(): array
     {
@@ -25,9 +28,14 @@ class Post extends Model
       return $this->belongsTo(Category::class);
     }
 
+    // public function tags()
+    // {
+    //     return $this->belongsToMany(Tag::class,'post_tag','post_id','tag_id');
+    // }
+
     public function tags()
     {
-        return $this->belongsToMany(Tag::class,'post_tag','post_id','tag_id');
+        return $this->belongsToMany(Tag::class);
     }
 
 }
