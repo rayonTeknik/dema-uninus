@@ -81,6 +81,7 @@ class HomeController extends Controller
       $home = Home::find($id);
       
       $home->title = $request->input('title'); 
+      $home->description = $request->input('description'); 
 
       
       if ($request->hasFile('img')) {

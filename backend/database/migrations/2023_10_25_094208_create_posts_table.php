@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug');
             $table->string('img');
-            $table->string('views');
+            $table->integer('status')->default(0);
+            $table->string('views')->default(0);
             $table->text('content');
             $table->foreignId('category_id')->nullable;
             $table->foreignId('user_id')->nullable;

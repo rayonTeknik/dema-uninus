@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryPostController;
+use App\Http\Controllers\Admin\PostController as AdminPostController;
 use App\Http\Controllers\AspirasiController;
 use App\Http\Controllers\BeasiswaController;
 use App\Http\Controllers\frontend\PostController;
@@ -79,3 +80,12 @@ Route::get('/admin/category/show/{id}', [CategoryPostController::class, 'show'])
 Route::get('/admin/category/edit/{id}', [CategoryPostController::class, 'edit'])->name('edit.categoryPost');
 Route::put('/admin/category/update/{id}', [CategoryPostController::class, 'update'])->name('update.categoryPost');
 Route::delete('/admin/category/destroy/{id}', [CategoryPostController::class, 'destroy'])->name('categoryPost.destroy');
+
+// CRUD POST BLOG ADMIN
+Route::get('/admin/post', [AdminPostController::class, 'index'])->name('index.post');
+Route::get('/admin/post/create', [AdminPostController::class, 'create'])->name('create.post');
+Route::post('/admin/post/store', [AdminPostController::class, 'store'])->name('store.post');
+Route::get('/admin/post/show/{id}', [AdminPostController::class, 'show'])->name('show.post');
+Route::get('/admin/post/edit/{id}', [AdminPostController::class, 'edit'])->name('edit.post');
+Route::put('/admin/post/update/{id}', [AdminPostController::class, 'update'])->name('update.post');
+Route::delete('/admin/post/destroy/{id}', [AdminPostController::class, 'destroy'])->name('post.destroy');

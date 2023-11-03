@@ -37,6 +37,14 @@
   <!-- Nepcha Analytics (nepcha.com) -->
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+  <!-- CKEditor CDN -->
+  <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
+
+  <style>
+    .ck-editor__editable_inline {
+        min-height: 100px;
+    }
+</style>
 </head>
 
 <body class="g-sidenav-show  bg-gray-200">
