@@ -14,11 +14,18 @@
                     <label class="form-label">Judul</label>
                     <input type="text" class="form-control" name="title" value="{{ $home->title }}">
                   </div>
+
+                  <div class="input-group input-group-outline my-3">
+                    <label class="form-label">Deskripsi</label>
+                      <textarea name="description" id="" cols="100" rows="10">
+                        {{ $home->description }}
+                      </textarea>
+                  </div>
                   
-                  <label class="form-label my-3">Gambar Format : JPG, PNG, JPEG</label>
+                  {{-- <label class="form-label my-3">Gambar Format : JPG, PNG, JPEG</label>
                   <div class="input-group input-group-outline ">
                     <input type="file" class="form-control" name="img" value="{{ $home->img }}">
-                  </div>
+                  </div> --}}
                   {{-- <div class="input-group input-group-outline mb-3">
                     <label class="form-label">Password</label>
                     <input type="password" class="form-control">

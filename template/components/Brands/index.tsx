@@ -52,10 +52,15 @@ const Brands = () => {
       <div className="container">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
+            <h2 className="text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl text-center mb-4">
+              Dema Uninus Bersama
+            </h2>
+            <p className="text-center my-3">
+              Ormawa yang ada di uninus diataranya: 
+            </p>
             <div
               className="wow fadeInUp flex flex-wrap items-center justify-center rounded-md bg-dark py-8 px-8 dark:bg-primary dark:bg-opacity-5 sm:px-10 md:py-[40px] md:px-[50px] xl:p-[50px] 2xl:py-[60px] 2xl:px-[70px]"
-              data-wow-delay=".1s
-              "
+              data-wow-delay=".1s"
             >
               {brandsData.map((brand) => (
                 <SingleBrand key={brand.id} brand={brand} />
@@ -78,10 +83,10 @@ const SingleBrand = ({ brand }: { brand: Brand }) => {
       <a
         href={href}
         target="_blank"
-        rel="nofollow noreferrer"
+        rel="noopener noreferrer" 
         className="relative h-10 w-full opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0 dark:opacity-60 dark:hover:opacity-100"
       >
-        <Image src={image} alt={name} fill />
+        <Image src={image} alt={name} width={160} height={40} /> {/* Perbaikan untuk Image component */}
       </a>
     </div>
   );
