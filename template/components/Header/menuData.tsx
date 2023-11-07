@@ -20,8 +20,14 @@ const menuData: Menu[] = [
     newTab: false,
   },
   {
+    id: 5,
+    title: "Beasiswa",
+    path: "/beasiswa",
+    newTab: false,
+  },
+  {
     id: 3,
-    title: "Support",
+    title: "Contact",
     path: "/contact",
     newTab: false,
   },
