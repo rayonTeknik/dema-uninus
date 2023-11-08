@@ -7,8 +7,8 @@ const Blog = () => {
     <section id="blog" className="bg-primary/5 py-16 md:py-20 lg:py-28">
       <div className="container">
         <SectionTitle
-          title="Our Latest Blogs"
-          paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+          title="Latest Blogs"
+          paragraph="Blogs adalah instrumen paling baik dalam pencerahan dan meningkatkan kualitas manusia sebagai makhluk rasional, moral, dan sosial."
           center
         />
 
