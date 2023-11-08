@@ -15,7 +15,7 @@ const Contact = () => {
                 Kolom Aspirasi
               </h2>
               <p className="mb-12 text-base font-medium text-body-color">
-              " Belajarlah untuk melihat perbedaan antara kritik yang membangun dan merusak. "
+              Belajarlah untuk melihat perbedaan antara kritik yang membangun dan merusak.
               </p>
               <form>
                 <div className="-mx-4 flex flex-wrap">

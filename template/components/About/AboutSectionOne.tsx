@@ -29,7 +29,7 @@ const AboutSectionOne = () => {
                 mb="44px"
               />
 
-              <div
+              {/* <div
                 className="wow fadeInUp mb-12 max-w-[570px] lg:mb-0"
                 data-wow-delay=".15s"
               >
@@ -46,7 +46,7 @@ const AboutSectionOne = () => {
                     <List text="Developer friendly" />
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div className="w-full px-4 lg:w-1/2">
