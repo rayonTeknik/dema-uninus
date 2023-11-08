@@ -26,7 +26,7 @@ const Video = () => {
               data-wow-delay=".15s"
             >
               <div className="relative aspect-[77/50] items-center justify-center object-cover">
-                <Image src="/images/video/dema.JPG" alt="video image" fill />
+                <Image src="/images/video/pelantikan.jpg" alt="video image" fill />
                 <div className="absolute top-0 right-0 flex h-full w-full items-center justify-center">
                   {/* <button
                     onClick={() => setOpen(true)}
