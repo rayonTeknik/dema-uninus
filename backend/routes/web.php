@@ -22,7 +22,7 @@ use App\Http\Controllers\PengurusController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.home');
 });
 
 
