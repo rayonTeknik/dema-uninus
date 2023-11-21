@@ -44,6 +44,13 @@
                     <i class="fa-solid fa-building"></i>
                     <span>About</span></a>
             </li>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('index.agenda') }}">
+                    <i class="fa-solid fa-calendar"></i>
+                    <span>Agenda</span></a>
+            </li>
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="#">

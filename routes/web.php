@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CategoryPostController;
 use App\Http\Controllers\Admin\PostController as AdminPostController;
+use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\AspirasiController;
 use App\Http\Controllers\BeasiswaController;
 use App\Http\Controllers\Client\AboutController;
@@ -61,6 +62,14 @@ Route::post('/admin/home/store', [HomeController::class, 'store'])->name('store.
 Route::get('/admin/home/edit/{id}', [HomeController::class, 'edit'])->name('edit.home');
 Route::put('/admin/home/update/{id}', [HomeController::class, 'update'])->name('update.home');
 Route::delete('/admin/home/destroy/{id}', [HomeController::class, 'destroy'])->name('home.destroy');
+
+// CRUD AGENDA
+Route::get('/admin/agenda', [AgendaController::class, 'index'])->name('index.agenda');
+Route::get('/admin/agenda/create', [AgendaController::class, 'create'])->name('create.agenda');
+Route::post('/admin/agenda/store', [AgendaController::class, 'store'])->name('store.agenda');
+Route::get('/admin/agenda/edit/{id}', [AgendaController::class, 'edit'])->name('edit.agenda');
+Route::put('/admin/agenda/update/{id}', [AgendaController::class, 'update'])->name('update.agenda');
+Route::delete('/admin/agenda/destroy/{id}', [AgendaController::class, 'destroy'])->name('agenda.destroy');
 
 // CRUD PENGURUS
 Route::get('/admin/pengurus', [PengurusController::class, 'index'])->name('index.pengurus');

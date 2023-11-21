@@ -108,19 +108,29 @@
 
                 <header class="section-header">
                     <h2>Our Values</h2>
-                    <p>Kegiatan Mahasiswa</p>
+                    <p>Datang dan Meriahkan</p>
                 </header>
 
                 <div class="row">
 
                   @foreach ($dataKegiatan as $item)
-                  <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                  <div class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
                       <div class="box">
                           <img src="{{ asset('img/'. $item['img']) }}" class="img-fluid" alt="">
                           <h3>{{ $item['name'] }}</h3>
-                          <p>{{ $item['description'] }}</p>
-                          <p>{{ $item['date'] }}</p>
-
+                          <table class="table text-start">
+                            <tbody>
+                              <tr>
+                                <td>Waktu</td>
+                                <td>{{ $item['date'] }}</td>
+                              </tr>
+                              <tr>
+                                <td>Tempat</td>
+                                <td>{{ $item['location'] }}</td>
+                              </tr>
+                              </tr>
+                            </tbody>
+                          </table>
                       </div>
                   </div>
               @endforeach
@@ -133,7 +143,7 @@
         </section><!-- End Values Section -->
 
         <!-- ======= Counts Section ======= -->
-        <section id="counts" class="counts">
+        {{-- <section id="counts" class="counts">
             <div class="container" data-aos="fade-up">
 
                 <div class="row gy-4">
@@ -185,7 +195,7 @@
                 </div>
 
             </div>
-        </section><!-- End Counts Section -->
+        </section><!-- End Counts Section --> --}}
 
         <!-- ======= Features Section ======= -->
         <section id="features" class="features">
@@ -194,7 +204,7 @@
 
                 <header class="section-header">
                     <h2>Features</h2>
-                    <p>Laboriosam et omnis fuga quis dolor direda fara</p>
+                    <p>Dema Uninus Sebagai</p>
                 </header>
 
                 <div class="row">
