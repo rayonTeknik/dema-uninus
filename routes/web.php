@@ -4,6 +4,8 @@ use App\Http\Controllers\Admin\CategoryPostController;
 use App\Http\Controllers\Admin\PostController as AdminPostController;
 use App\Http\Controllers\AspirasiController;
 use App\Http\Controllers\BeasiswaController;
+use App\Http\Controllers\Client\AboutController;
+use App\Http\Controllers\Client\HomeController as ClientHomeController;
 use App\Http\Controllers\frontend\PostController;
 use App\Http\Controllers\GaleriController;
 use Illuminate\Support\Facades\Route;
@@ -21,16 +23,35 @@ use App\Http\Controllers\PengurusController;
 |
 */
 
-Route::get('/', function () {
-    return "Dema Uninus";
+/*
+|--------------------------------------------------------------------------
+| Client Side
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/',[ClientHomeController::class, 'index'])->name('client.home');
+Route::get('/about',[AboutController::class, 'index'])->name('client.about');
+
+Route::get('/galeri', function () {
+  return view('clients.galeri');
 });
 
 
 Route::get('/post',[PostController::class, 'index']);
 
+/*
+|--------------------------------------------------------------------------
+| Auth Side
+|--------------------------------------------------------------------------
+*/
 
 
 
+/*
+|--------------------------------------------------------------------------
+| Server Side
+|--------------------------------------------------------------------------
+*/
 Route::get('/admin/dashboard',[HomeController::class, 'dashboard'])->name('dashboard.admin');
 
 // CRUD HOME
