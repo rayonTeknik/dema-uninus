@@ -1,7 +1,7 @@
 @section('title')
     {{ 'Galery' }}
 @endsection
-@extends('master')
+@extends('masterClient')
 @section('content')
 
         <!-- ======= Portfolio Section ======= -->

@@ -1,7 +1,7 @@
 @section('title')
     {{ 'About' }}
 @endsection
-@extends('master')
+@extends('masterClient')
 @section('content')
     <!-- ======= About Section ======= -->
     <section id="about" class="about mt-4">

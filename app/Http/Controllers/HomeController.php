@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function dashboard ()
     {
-        return view('admin.index');
+        return view('server.index');
     }
 
         /**
@@ -22,7 +22,7 @@ class HomeController extends Controller
     public function index()
     {
       $home = Home::all();
-        return view('admin.home.index', compact('home'));
+        return view('server.home.index', compact('home'));
     }
 
     /**
@@ -69,7 +69,7 @@ class HomeController extends Controller
     public function edit($id, Home $home)
     {
         $home = Home::find($id);
-        return view('admin.home.edit', compact('home'));
+        return view('server.home.edit', compact('home'));
     }
 
     /**
