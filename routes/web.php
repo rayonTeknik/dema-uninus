@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\AspirasiController;
@@ -43,13 +44,19 @@ Route::get('/article-dema-uninus/{slug}',[PostController::class, 'show'])->name(
 |--------------------------------------------------------------------------
 */
 
-
+Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/login/authenticate', [LoginController::class, 'authenticate'])->name('authenticate');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 /*
 |--------------------------------------------------------------------------
 | Server Side
 |--------------------------------------------------------------------------
 */
+
+
+
+Route::middleware(['auth'])->group(function () {
 Route::get('/admin/dashboard',[HomeController::class, 'dashboard'])->name('dashboard.admin');
 
 // CRUD HOME
@@ -116,3 +123,5 @@ Route::get('/admin/post/show/{id}', [AdminPostController::class, 'show'])->name(
 Route::get('/admin/post/edit/{id}', [AdminPostController::class, 'edit'])->name('edit.post');
 Route::put('/admin/post/update/{id}', [AdminPostController::class, 'update'])->name('update.post');
 Route::delete('/admin/post/destroy/{id}', [AdminPostController::class, 'destroy'])->name('post.destroy');
+
+});
