@@ -1,7 +1,7 @@
 @section('title')
     {{ 'Home' }}
 @endsection
-@extends('master')
+@extends('masterClient')
 @section('content')
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="hero d-flex align-items-center">
@@ -33,6 +33,73 @@
     </section><!-- End Hero -->
 
     <main id="main">
+
+
+      
+                <!-- Feature Tabs -->
+                <div class="row feture-tabs m-4 pt-4" data-aos="fade-up">
+                  <div class="col-lg-12">
+                    <header class="section-header">
+                      <h2>Visi dan Misi</h2>
+                      <p>Kabinet Merdeka</p>
+                  </header>
+
+                      <!-- Tabs -->
+                      <ul class="nav nav-pills mb-3 text-center justify-content-center align-center">
+                          <li>
+                              <a class="nav-link active" data-bs-toggle="pill" href="#tab1">Visi</a>
+                          </li>
+                          <li>
+                              <a class="nav-link" data-bs-toggle="pill" href="#tab2">Misi</a>
+                          </li>
+                      </ul><!-- End Tabs -->
+
+                      <!-- Tab Content -->
+                      <div class="tab-content">
+
+                          <div class="tab-pane fade show active container" id="tab1">
+                              <p>
+                                Menjadikan Dema Uninus sebagai wahana intelektual mahasiswa yang berlandaskan asas kesatuan tujuan, penyerap aspirasi mahasiswa uninus dan sekaligus inisiator penggerak pelaksana aspirasi, guna mewujudkan Dema Uninus yang kompetible, harmonis dan berjiwa sosialis.
+                              </p>
+                          </div><!-- End Tab 1 Content -->
+
+                          <div class="tab-pane fade show container" id="tab2">
+
+                              <div class="d-flex align-items-center mb-2">
+                                  <i class="bi bi-check2"></i>
+                                  <p>Membangun Internal Dema berlandaskan kekeluargaan yang bernafaskan profesionalisme.</p>
+                              </div>
+                              <div class="d-flex align-items-center mb-2">
+                                  <i class="bi bi-check2"></i>
+                                  <p>Mewujudkan mahasiswa UNINUS yang kompeten dan selaras dengan tujuan bersama.</p>
+                              </div>
+                              <div class="d-flex align-items-center mb-2">
+                                  <i class="bi bi-check2"></i>
+                                  <p>Menguatkan penyerapan aspirasi untuk melayani mahasiswa secara solutif. 
+                                  </p>
+                              </div>
+                              <div class="d-flex align-items-center mb-2">
+                                  <i class="bi bi-check2"></i>
+                                  <p>Memfasilitasi pengembangan minat bakat, keilmuan, dan karakter mahasiswa UNINUS.
+                                  </p>
+                              </div>
+                              <div class="d-flex align-items-center mb-2">
+                                  <i class="bi bi-check2"></i>
+                                  <p>Melakukan kajian terkait isu strategis dalam pemecahan masalah di lingkungan fakultas, universitas, daerah maupun tingkat nasional.
+                                  </p>
+                              </div>
+                              
+                          </div><!-- End Tab 2 Content -->
+
+                      </div>
+
+                  </div>
+
+                  {{-- <div class="col-lg-6">
+                      <img src="{{ asset('template/assets/img/features-2.png') }}" class="img-fluid" alt="">
+                  </div> --}}
+
+              </div><!-- End Feature Tabs -->
 
         <!-- ======= Values Section ======= -->
         <section id="values" class="values">
@@ -185,71 +252,6 @@
                     </div>
 
                 </div> <!-- / row -->
-
-                <!-- Feature Tabs -->
-                <div class="row feture-tabs" data-aos="fade-up">
-                    <div class="col-lg-12">
-                      <header class="section-header">
-                        <h2>Visi dan Misi</h2>
-                        <p>Kabinet Merdeka</p>
-                    </header>
-
-                        <!-- Tabs -->
-                        <ul class="nav nav-pills mb-3 text-center justify-content-center align-center">
-                            <li>
-                                <a class="nav-link active" data-bs-toggle="pill" href="#tab1">Visi</a>
-                            </li>
-                            <li>
-                                <a class="nav-link" data-bs-toggle="pill" href="#tab2">Misi</a>
-                            </li>
-                        </ul><!-- End Tabs -->
-
-                        <!-- Tab Content -->
-                        <div class="tab-content">
-
-                            <div class="tab-pane fade show active" id="tab1">
-                                <p>
-                                  Menjadikan Dema Uninus sebagai wahana intelektual mahasiswa yang berlandaskan asas kesatuan tujuan, penyerap aspirasi mahasiswa uninus dan sekaligus inisiator penggerak pelaksana aspirasi, guna mewujudkan Dema Uninus yang kompetible, harmonis dan berjiwa sosialis.
-                                </p>
-                            </div><!-- End Tab 1 Content -->
-
-                            <div class="tab-pane fade show" id="tab2">
-
-                                <div class="d-flex align-items-center mb-2">
-                                    <i class="bi bi-check2"></i>
-                                    <p>Membangun Internal Dema berlandaskan kekeluargaan yang bernafaskan profesionalisme.</p>
-                                </div>
-                                <div class="d-flex align-items-center mb-2">
-                                    <i class="bi bi-check2"></i>
-                                    <p>Mewujudkan mahasiswa UNINUS yang kompeten dan selaras dengan tujuan bersama.</p>
-                                </div>
-                                <div class="d-flex align-items-center mb-2">
-                                    <i class="bi bi-check2"></i>
-                                    <p>Menguatkan penyerapan aspirasi untuk melayani mahasiswa secara solutif. 
-                                    </p>
-                                </div>
-                                <div class="d-flex align-items-center mb-2">
-                                    <i class="bi bi-check2"></i>
-                                    <p>Memfasilitasi pengembangan minat bakat, keilmuan, dan karakter mahasiswa UNINUS.
-                                    </p>
-                                </div>
-                                <div class="d-flex align-items-center mb-2">
-                                    <i class="bi bi-check2"></i>
-                                    <p>Melakukan kajian terkait isu strategis dalam pemecahan masalah di lingkungan fakultas, universitas, daerah maupun tingkat nasional.
-                                    </p>
-                                </div>
-                                
-                            </div><!-- End Tab 2 Content -->
-
-                        </div>
-
-                    </div>
-
-                    {{-- <div class="col-lg-6">
-                        <img src="{{ asset('template/assets/img/features-2.png') }}" class="img-fluid" alt="">
-                    </div> --}}
-
-                </div><!-- End Feature Tabs -->
 
                 <!-- Feature Icons -->
                 <div class="row feature-icons" data-aos="fade-up">
