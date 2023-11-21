@@ -38,7 +38,13 @@
                                         <img src="{{ asset('img/'. $item->img ) }}" style="width: 60px; height:60px; object-fit:cover" alt="">
                                         </div></td>
                                       <td>
-                                        <a href="" class="btn btn-warning">Edit</a>
+                                        <a href="{{ route('edit.agenda', $item->id) }}" class="btn btn-warning">Edit</a>
+                                        <form method="POST" action="{{ route('agenda.destroy', $item->id) }}" style="display:inline">
+                                          @csrf
+                                          @method('DELETE')
+                                          <button type="submit" class="btn btn-danger" data-confirm-delete="true">Delete</button>
+                                      </form>
+                                      
                                       </td>
                                     </tr>
                                   </tbody>

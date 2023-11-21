@@ -1,17 +1,18 @@
 <?php
 
-use App\Http\Controllers\Admin\CategoryPostController;
-use App\Http\Controllers\Admin\PostController as AdminPostController;
-use App\Http\Controllers\AgendaController;
-use App\Http\Controllers\AspirasiController;
-use App\Http\Controllers\BeasiswaController;
-use App\Http\Controllers\Client\AboutController;
-use App\Http\Controllers\Client\HomeController as ClientHomeController;
-use App\Http\Controllers\frontend\PostController;
-use App\Http\Controllers\GaleriController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AgendaController;
+use App\Http\Controllers\GaleriController;
+use App\Http\Controllers\AspirasiController;
+use App\Http\Controllers\BeasiswaController;
 use App\Http\Controllers\PengurusController;
+use App\Http\Controllers\Client\PostController;
+use App\Http\Controllers\Client\AboutController;
+use App\Http\Controllers\Admin\CategoryPostController;
+use App\Http\Controllers\Admin\PostController as AdminPostController;
+use App\Http\Controllers\Client\HomeController as ClientHomeController;
+use App\Http\Controllers\Client\GaleriController as ClientGaleriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,13 +33,9 @@ use App\Http\Controllers\PengurusController;
 
 Route::get('/',[ClientHomeController::class, 'index'])->name('client.home');
 Route::get('/about',[AboutController::class, 'index'])->name('client.about');
-
-Route::get('/galeri', function () {
-  return view('clients.galeri');
-});
-
-
-Route::get('/post',[PostController::class, 'index']);
+Route::get('/galeri',[ClientGaleriController::class, 'index'])->name('client.galeri');
+Route::get('/blog',[PostController::class, 'index'])->name('client.blog');
+Route::get('/article-dema-uninus/{slug}',[PostController::class, 'show'])->name('client.blogShow');
 
 /*
 |--------------------------------------------------------------------------
@@ -69,7 +66,7 @@ Route::get('/admin/agenda/create', [AgendaController::class, 'create'])->name('c
 Route::post('/admin/agenda/store', [AgendaController::class, 'store'])->name('store.agenda');
 Route::get('/admin/agenda/edit/{id}', [AgendaController::class, 'edit'])->name('edit.agenda');
 Route::put('/admin/agenda/update/{id}', [AgendaController::class, 'update'])->name('update.agenda');
-Route::delete('/admin/agenda/destroy/{id}', [AgendaController::class, 'destroy'])->name('agenda.destroy');
+Route::delete('/admin/agenda/destroy/{id}', [AgendaController::class, 'delete'])->name('agenda.destroy');
 
 // CRUD PENGURUS
 Route::get('/admin/pengurus', [PengurusController::class, 'index'])->name('index.pengurus');

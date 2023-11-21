@@ -171,6 +171,7 @@ return [
         'Intervention\Image\ImageServiceProvider',
         Orangehill\Iseed\IseedServiceProvider::class,
         // JeroenNoten\LaravelCkEditor\ServiceProvider::class,
+        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
 
     ])->toArray(),
 
@@ -187,7 +188,8 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
-        'Image' => 'Intervention\Image\Facades\Image'
+        'Image' => 'Intervention\Image\Facades\Image',
+        'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
     ])->toArray(),
 
 ];

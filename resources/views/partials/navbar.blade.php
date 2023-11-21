@@ -15,7 +15,7 @@
           <li><a class="nav-link scrollto" href="#services">Info Beasiswa</a></li>
           <li><a class="nav-link scrollto" href="/galeri">Galeri</a></li>
           {{-- <li><a class="nav-link scrollto" href="#team">Team</a></li> --}}
-          <li><a href="blog.html">Blog</a></li>
+          <li><a href="{{ route('client.blog') }}">Blog</a></li>
           {{-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>

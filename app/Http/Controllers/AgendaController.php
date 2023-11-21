@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Agenda;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AgendaController extends Controller
 {
@@ -88,8 +89,15 @@ class AgendaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Agenda $agenda)
+    public function delete($id, Agenda $agenda)
     {
-        //
+      $title = 'Delete Agenda !';
+      $text = "Are you sure you want to delete?";
+      confirmDelete($title, $text);
+
+      $item = Agenda::findOrFail($id);
+      $item->delete();
+      Alert::success('Success', 'User Berhasil Dihapus'); 
+      return redirect()->route('index.agenda');
     }
 }

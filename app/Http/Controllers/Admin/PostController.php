@@ -19,7 +19,7 @@ class PostController extends Controller
       $post =Post::latest()->get();
 
       // dd($post);
-      return view("admin.post.index", compact("post"));
+      return view("server.blogs.index", compact("post"));
   }
 
   /**
@@ -29,7 +29,7 @@ class PostController extends Controller
   {
     $tag = Tag::latest()->get();
     $categories = Category::all();
-      return view("admin.post.create", compact("categories", "tag"));
+      return view("server.blogs.create", compact("categories", "tag"));
   }
 
   /**
@@ -69,8 +69,9 @@ class PostController extends Controller
   public function edit($id, Request $request, Post $post)
   {
       $post =Post::find($id);
-      $post = Post::with('category', 'tag');
-      return view('admin.post.edit', compact('post'));
+      $tags = Tag::latest()->get();
+      $categories = Category::all();
+      return view('server.blogs.edit', compact('post', 'tags', 'categories'));
   }
 
   /**
@@ -85,9 +86,7 @@ class PostController extends Controller
           return "error cuy";
       }
   
-      // Update the post with the request data
-      $post->update($request->all());
-  
+      // Handle image upload
       if ($request->hasFile('img')) {
           $image = $request->file('img');
           $newFileName = 'Blog_' . $request->title . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
@@ -97,10 +96,16 @@ class PostController extends Controller
               $constraint->aspectRatio();
           })->save(public_path('img/' . $newFileName));
   
-          $post->img = $newFileName;
+          // Update the post with the new image filename
+          $post->update(['img' => $newFileName]);
       }
   
-      $post->save();
+      // Ensure the "status" field is cast to an integer
+      $postData = array_merge($request->except('tags', 'img'), ['status' => (int) $request->status]);
+  
+      // Save the post first, then attach the tags
+      $post->update($postData);
+      $post->tags()->sync($request->tags);
   
       return redirect()->route('index.post');
   }
