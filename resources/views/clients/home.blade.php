@@ -226,6 +226,11 @@
                                     <i class="bi bi-clock"></i>  <time datetime="{{ $item->created_at->format('Y-m-d') }}">{{ $item->created_at->format('d M, Y') }}</time> <br>
                                     <i class="bi bi-geo-alt"></i> {{ $item['location'] }} 
                                 </th>
+                                <th>
+                                  <div> 
+                                    <img src="{{ asset('img/'. $item->img) }}" style="width:100px; height:70px; object-fit:cover" alt="">
+                                  </div>
+                                </th>
                             </tr>
                         </thead>
                     </table>
