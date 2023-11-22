@@ -1,6 +1,5 @@
-@section('title')
-    {{ 'Galery' }}
-@endsection
+@section('title'){{ 'Home' }}@endsection
+@section('favicon'){{ asset('img/dema.png') }}@endsection
 @extends('masterClient')
 @section('content')
 

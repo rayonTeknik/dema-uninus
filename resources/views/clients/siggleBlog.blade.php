@@ -1,6 +1,5 @@
-@section('title')
-    {{ $post->title }}
-@endsection
+@section('title'){{ $post->title }}@endsection
+@section('favicon'){{ asset('img/'. $post->img) }}@endsection
 @extends('masterClient')
 @section('content')
     <section class="breadcrumbs">
