@@ -9,9 +9,13 @@
     <meta content="" name="description">
     <meta content="" name="keywords">
 
+    <!-- Favicons dinamis -->
+    <link href="@yield('favicon')" rel="icon">
+    <link href="@yield('favicon')" rel="apple-touch-icon">
+
     <!-- Favicons -->
-    <link href="{{ asset('img/dema.png') }}" rel="icon">
-    <link href="{{ asset('img/dema.png') }}" rel="apple-touch-icon">
+    {{-- <link href="{{ asset('img/dema.png') }}" rel="icon">
+    <link href="{{ asset('img/dema.png') }}" rel="apple-touch-icon"> --}}
 
     <!-- Google Fonts -->
     <link

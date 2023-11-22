@@ -1,5 +1,6 @@
+@section('title'){{ 'Home' }}@endsection
+@section('favicon'){{ asset('img/dema.png') }}@endsection
 @extends('masterClient')
-@section('title', 'Blog')
 @section('content')
     <section class="breadcrumbs">
         <div class="container">
