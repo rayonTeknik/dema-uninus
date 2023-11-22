@@ -14,7 +14,7 @@ class GaleriController extends Controller
     public function index()
     {
         $galeri =galeri::all();
-        return view("admin.galeri.index", compact("galeri"));
+        return view("server.galeri.index", compact("galeri"));
     }
 
     /**
@@ -22,7 +22,7 @@ class GaleriController extends Controller
      */
     public function create()
     {
-        return view("admin.galeri.create");
+        return view("server.galeri.create");
     }
 
     /**
@@ -61,7 +61,7 @@ class GaleriController extends Controller
     public function edit($id, Galeri $galeri)
     {
         $galeri=Galeri::find($id);
-        return view('admin.galeri.edit', compact('galeri'));
+        return view('server.galeri.edit', compact('galeri'));
     }
 
     /**

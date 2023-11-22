@@ -19,13 +19,13 @@
                     <div class="card-body">
                       <form action="{{ route('store.galeri') }}" method="post" enctype="multipart/form-data">
                         @csrf
-                        <div class="input-group input-group-outline my-3">
+                        <div class=" my-3">
                           <label class="form-label">Judul Kegiatan</label>
                           <input type="text" class="form-control" name="title">
                         </div>
       
                         <label class="form-label my-3">Gambar Format : JPG, PNG, JPEG</label>
-                        <div class="input-group input-group-outline ">
+                        <div class=" ">
                           <input type="file" class="form-control" name="img">
                         </div>
                         <div class="text-center">
