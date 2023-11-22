@@ -14,7 +14,7 @@ class PengurusController extends Controller
     public function index()
     {
       $pengurus = Pengurus::all();
-      return view('admin.pengurus.index', compact('pengurus'));
+      return view('server.pengurus.index', compact('pengurus'));
     }
 
     /**
@@ -22,7 +22,7 @@ class PengurusController extends Controller
      */
     public function create()
     {
-        return view('admin.pengurus.create');
+        return view('server.pengurus.create');
     }
 
     /**
@@ -63,7 +63,7 @@ class PengurusController extends Controller
     public function edit($id, Pengurus $pengurus)
     {
       $pengurus = Pengurus::find($id);
-      return view('admin.pengurus.edit', compact('pengurus'));
+      return view('server.pengurus.edit', compact('pengurus'));
     }
 
     /**

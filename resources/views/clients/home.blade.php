@@ -101,6 +101,107 @@
 
               </div><!-- End Feature Tabs -->
 
+                      <!-- ======= Features Section ======= -->
+        <section id="features" class="features">
+
+          <div class="container" data-aos="fade-up">
+
+              <header class="section-header">
+                  <h2>Features</h2>
+                  <p>Dema Uninus Sebagai</p>
+              </header>
+
+              <div class="row">
+
+                  <div class="col-lg-6">
+                      <img src="{{ asset('template/assets/img/features.png') }}" class="img-fluid" alt="">
+                  </div>
+
+                  <div class="col-lg-6 mt-5 mt-lg-0 d-flex">
+                      <div class="row align-self-center gy-4">
+
+                          <div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
+                              <div class="feature-box d-flex align-items-center">
+                                  <i class="bi bi-check"></i>
+                                  <h3>Perwakilan Suara Mahasiswa</h3>
+                              </div>
+                          </div>
+
+                          <div class="col-md-6" data-aos="zoom-out" data-aos-delay="300">
+                              <div class="feature-box d-flex align-items-center">
+                                  <i class="bi bi-check"></i>
+                                  <h3>Penyelenggaraan Program</h3>
+                              </div>
+                          </div>
+
+                          <div class="col-md-6" data-aos="zoom-out" data-aos-delay="400">
+                              <div class="feature-box d-flex align-items-center">
+                                  <i class="bi bi-check"></i>
+                                  <h3>Advokasi Hak Mahasiswa</h3>
+                              </div>
+                          </div>
+
+                          <div class="col-md-6" data-aos="zoom-out" data-aos-delay="500">
+                              <div class="feature-box d-flex align-items-center">
+                                  <i class="bi bi-check"></i>
+                                  <h3>Manajemen Dana</h3>
+                              </div>
+                          </div>
+
+                          <div class="col-md-6" data-aos="zoom-out" data-aos-delay="600">
+                              <div class="feature-box d-flex align-items-center">
+                                  <i class="bi bi-check"></i>
+                                  <h3>Pendampingan Mahasiswa</h3>
+                              </div>
+                          </div>
+
+                          <div class="col-md-6" data-aos="zoom-out" data-aos-delay="700">
+                              <div class="feature-box d-flex align-items-center">
+                                  <i class="bi bi-check"></i>
+                                  <h3>Kolaborasi Eksternal</h3>
+                              </div>
+                          </div>
+
+                      </div>
+                  </div>
+
+              </div> <!-- / row -->
+
+              <!-- Feature Icons -->
+              <div class="row feature-icons" data-aos="fade-up">
+                  <h3>Quotes yang berharga</h3>
+
+                  <div class="row">
+
+                      <div class="col-xl-4 text-center" data-aos="fade-right" data-aos-delay="100">
+                          <img src="{{ asset('img/muti.jpg') }}" class="img-fluid p-4"
+                              alt="">
+                      </div>
+
+                      <div class="col-xl-8 d-flex content">
+                          <div class="row align-self-center gy-4">
+
+                              <div class="col-md-12 icon-box" data-aos="fade-up">
+                                <i class="fa-sharp fa-solid fa-quote-left"></i>
+                                  <div>
+                                      <h4>Abu Naum</h4>
+                                      <p>Tidur dimanapun dan kapanpun adalah jalan ninjaku!!!!</p>
+                                  </div>
+                                  <i class="fa-solid fa-quote-right"></i>
+                              </div>
+
+                          </div>
+                      </div>
+
+                  </div>
+
+              </div><!-- End Feature Icons -->
+
+          </div>
+
+      </section><!-- End Features Section -->
+
+
         <!-- ======= Values Section ======= -->
         <section id="values" class="values">
 
@@ -108,19 +209,29 @@
 
                 <header class="section-header">
                     <h2>Our Values</h2>
-                    <p>Kegiatan Mahasiswa</p>
+                    <p>Datang dan Meriahkan</p>
                 </header>
 
                 <div class="row">
 
                   @foreach ($dataKegiatan as $item)
-                  <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                  <div class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
                       <div class="box">
                           <img src="{{ asset('img/'. $item['img']) }}" class="img-fluid" alt="">
                           <h3>{{ $item['name'] }}</h3>
-                          <p>{{ $item['description'] }}</p>
-                          <p>{{ $item['date'] }}</p>
-
+                          <table class="table text-start">
+                            <tbody>
+                              <tr>
+                                <td>Waktu</td>
+                                <td>{{ $item['date'] }}</td>
+                              </tr>
+                              <tr>
+                                <td>Tempat</td>
+                                <td>{{ $item['location'] }}</td>
+                              </tr>
+                              </tr>
+                            </tbody>
+                          </table>
                       </div>
                   </div>
               @endforeach
@@ -133,7 +244,7 @@
         </section><!-- End Values Section -->
 
         <!-- ======= Counts Section ======= -->
-        <section id="counts" class="counts">
+        {{-- <section id="counts" class="counts">
             <div class="container" data-aos="fade-up">
 
                 <div class="row gy-4">
@@ -185,150 +296,10 @@
                 </div>
 
             </div>
-        </section><!-- End Counts Section -->
+        </section><!-- End Counts Section --> --}}
 
-        <!-- ======= Features Section ======= -->
-        <section id="features" class="features">
 
-            <div class="container" data-aos="fade-up">
-
-                <header class="section-header">
-                    <h2>Features</h2>
-                    <p>Laboriosam et omnis fuga quis dolor direda fara</p>
-                </header>
-
-                <div class="row">
-
-                    <div class="col-lg-6">
-                        <img src="{{ asset('template/assets/img/features.png') }}" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-6 mt-5 mt-lg-0 d-flex">
-                        <div class="row align-self-center gy-4">
-
-                            <div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
-                                <div class="feature-box d-flex align-items-center">
-                                    <i class="bi bi-check"></i>
-                                    <h3>Eos aspernatur rem</h3>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6" data-aos="zoom-out" data-aos-delay="300">
-                                <div class="feature-box d-flex align-items-center">
-                                    <i class="bi bi-check"></i>
-                                    <h3>Facilis neque ipsa</h3>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6" data-aos="zoom-out" data-aos-delay="400">
-                                <div class="feature-box d-flex align-items-center">
-                                    <i class="bi bi-check"></i>
-                                    <h3>Volup amet voluptas</h3>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6" data-aos="zoom-out" data-aos-delay="500">
-                                <div class="feature-box d-flex align-items-center">
-                                    <i class="bi bi-check"></i>
-                                    <h3>Rerum omnis sint</h3>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6" data-aos="zoom-out" data-aos-delay="600">
-                                <div class="feature-box d-flex align-items-center">
-                                    <i class="bi bi-check"></i>
-                                    <h3>Alias possimus</h3>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6" data-aos="zoom-out" data-aos-delay="700">
-                                <div class="feature-box d-flex align-items-center">
-                                    <i class="bi bi-check"></i>
-                                    <h3>Repellendus mollitia</h3>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div> <!-- / row -->
-
-                <!-- Feature Icons -->
-                <div class="row feature-icons" data-aos="fade-up">
-                    <h3>Ratione mollitia eos ab laudantium rerum beatae quo</h3>
-
-                    <div class="row">
-
-                        <div class="col-xl-4 text-center" data-aos="fade-right" data-aos-delay="100">
-                            <img src="{{ asset('template/assets/img/features-3.png') }}" class="img-fluid p-4"
-                                alt="">
-                        </div>
-
-                        <div class="col-xl-8 d-flex content">
-                            <div class="row align-self-center gy-4">
-
-                                <div class="col-md-6 icon-box" data-aos="fade-up">
-                                    <i class="ri-line-chart-line"></i>
-                                    <div>
-                                        <h4>Corporis voluptates sit</h4>
-                                        <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut
-                                            aliquip</p>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                                    <i class="ri-stack-line"></i>
-                                    <div>
-                                        <h4>Ullamco laboris nisi</h4>
-                                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                                            deserunt</p>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-                                    <i class="ri-brush-4-line"></i>
-                                    <div>
-                                        <h4>Labore consequatur</h4>
-                                        <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-                                    <i class="ri-magic-line"></i>
-                                    <div>
-                                        <h4>Beatae veritatis</h4>
-                                        <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-                                    <i class="ri-command-line"></i>
-                                    <div>
-                                        <h4>Molestiae dolor</h4>
-                                        <p>Et fuga et deserunt et enim. Dolorem architecto ratione tensa raptor marte</p>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
-                                    <i class="ri-radar-line"></i>
-                                    <div>
-                                        <h4>Explicabo consectetur</h4>
-                                        <p>Est autem dicta beatae suscipit. Sint veritatis et sit quasi ab aut inventore</p>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div><!-- End Feature Icons -->
-
-            </div>
-
-        </section><!-- End Features Section -->
-
+{{-- 
         <!-- ======= Services Section ======= -->
         <section id="services" class="services">
 
@@ -496,6 +467,7 @@
 
         </section><!-- End Pricing Section -->
 
+        --}}
         <!-- ======= F.A.Q Section ======= -->
         <section id="faq" class="faq">
 
@@ -514,14 +486,12 @@
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#faq-content-1">
-                                        Non consectetur a erat nam at lectus urna duis?
+                                        Apa Itu Dema?
                                     </button>
                                 </h2>
                                 <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
                                     <div class="accordion-body">
-                                        Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet
-                                        non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor
-                                        purus non.
+                                        dema adalah
                                     </div>
                                 </div>
                             </div>
@@ -530,7 +500,7 @@
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#faq-content-2">
-                                        Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?
+                                        kenapa.......?
                                     </button>
                                 </h2>
                                 <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
@@ -643,18 +613,13 @@
 
                         <div class="swiper-slide">
                             <div class="testimonial-item">
-                                <div class="stars">
-                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                        class="bi bi-star-fill"></i>
-                                </div>
                                 <p>
                                     Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit
                                     rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam,
                                     risus at semper.
                                 </p>
                                 <div class="profile mt-auto">
-                                    <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img"
+                                    <img src="{{ asset('template/assets/img/testimonials/testimonials-1.jpg') }}" class="testimonial-img"
                                         alt="">
                                     <h3>Saul Goodman</h3>
                                     <h4>Ceo &amp; Founder</h4>
@@ -664,18 +629,13 @@
 
                         <div class="swiper-slide">
                             <div class="testimonial-item">
-                                <div class="stars">
-                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                        class="bi bi-star-fill"></i>
-                                </div>
                                 <p>
                                     Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid
                                     cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet
                                     legam anim culpa.
                                 </p>
                                 <div class="profile mt-auto">
-                                    <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img"
+                                    <img src="{{ asset('template/assets/img/testimonials/testimonials-2.jpg') }}" class="testimonial-img"
                                         alt="">
                                     <h3>Sara Wilsson</h3>
                                     <h4>Designer</h4>
@@ -685,17 +645,12 @@
 
                         <div class="swiper-slide">
                             <div class="testimonial-item">
-                                <div class="stars">
-                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                        class="bi bi-star-fill"></i>
-                                </div>
                                 <p>
                                     Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam
                                     duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
                                 </p>
                                 <div class="profile mt-auto">
-                                    <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img"
+                                    <img src="{{ asset('template/assets/img/testimonials/testimonials-3.jpg') }}" class="testimonial-img"
                                         alt="">
                                     <h3>Jena Karlis</h3>
                                     <h4>Store Owner</h4>
@@ -705,18 +660,13 @@
 
                         <div class="swiper-slide">
                             <div class="testimonial-item">
-                                <div class="stars">
-                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                        class="bi bi-star-fill"></i>
-                                </div>
                                 <p>
                                     Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat
                                     minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore
                                     labore illum veniam.
                                 </p>
                                 <div class="profile mt-auto">
-                                    <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img"
+                                    <img src="{{ asset('template/assets/img/testimonials/testimonials-4.jpg') }}" class="testimonial-img"
                                         alt="">
                                     <h3>Matt Brandon</h3>
                                     <h4>Freelancer</h4>
@@ -726,18 +676,13 @@
 
                         <div class="swiper-slide">
                             <div class="testimonial-item">
-                                <div class="stars">
-                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                        class="bi bi-star-fill"></i>
-                                </div>
                                 <p>
                                     Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster
                                     veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam
                                     culpa fore nisi cillum quid.
                                 </p>
                                 <div class="profile mt-auto">
-                                    <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img"
+                                    <img src="{{ asset('template/assets/img/testimonials/testimonials-5.jpg') }}" class="testimonial-img"
                                         alt="">
                                     <h3>John Larson</h3>
                                     <h4>Entrepreneur</h4>
@@ -766,21 +711,21 @@
 
                 <div class="clients-slider swiper">
                     <div class="swiper-wrapper align-items-center">
-                        <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid"
+                        <div class="swiper-slide"><img src="{{ asset('template/assets/img/clients/client-1.png') }}" class="img-fluid"
                                 alt=""></div>
-                        <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid"
+                        <div class="swiper-slide"><img src="{{ asset('template/assets/img/clients/client-2.png') }}" class="img-fluid"
                                 alt=""></div>
-                        <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid"
+                        <div class="swiper-slide"><img src="{{ asset('template/assets/img/clients/client-3.png') }}" class="img-fluid"
                                 alt=""></div>
-                        <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid"
+                        <div class="swiper-slide"><img src="{{ asset('template/assets/img/clients/client-4.png') }}" class="img-fluid"
                                 alt=""></div>
-                        <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid"
+                        <div class="swiper-slide"><img src="{{ asset('template/assets/img/clients/client-5.png') }}" class="img-fluid"
                                 alt=""></div>
-                        <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid"
+                        <div class="swiper-slide"><img src="{{ asset('template/assets/img/clients/client-6.png') }}" class="img-fluid"
                                 alt=""></div>
-                        <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid"
+                        <div class="swiper-slide"><img src="{{ asset('template/assets/img/clients/client-7.png') }}" class="img-fluid"
                                 alt=""></div>
-                        <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid"
+                        <div class="swiper-slide"><img src="{{ asset('template/assets/img/clients/client-8.png') }}" class="img-fluid"
                                 alt=""></div>
                     </div>
                     <div class="swiper-pagination"></div>

@@ -75,6 +75,15 @@ class Backup extends Command
         'tags' => [
             'tags',
         ],
+        'post_tag' => [
+            'post_tag',
+        ],
+        'agendas' => [
+            'agendas',
+        ],
+        'comments' => [
+            'comments',
+        ],
         
     ];    
     if ($opt_users == 1 || $arg_type == 'users') echo shell_exec('php artisan iseed users --force');
