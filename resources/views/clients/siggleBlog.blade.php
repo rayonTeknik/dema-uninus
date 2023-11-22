@@ -1,5 +1,5 @@
 @section('title')
-    {{ 'Blog' }}
+    {{ $post->title }}
 @endsection
 @extends('masterClient')
 @section('content')
@@ -83,17 +83,17 @@
                         <h4 class="comments-count">{{ $post->comments->count() }} Comments</h4>
 
                         <div id="comment-1" class="comment">
-                            <div class="d-flex">
+                            <div class="">
                                 {{-- <div class="comment-img"><img src="assets/img/blog/comments-1.jpg" alt=""></div> --}}
                                 @foreach ($post->comments as $item)
                                     <div>
                                         <h5><a href="#">{{ $item->name }}</a> <a href="#" class="reply"></a>
                                         </h5>
-                                        <time
-                                            datetime="{{ $item->created_at->format('Y-m-d') }}">{{ $item->created_at->format('d M, Y') }}</time>
                                         <p class="text-black">
-                                            " {{ $item->comment }} "
-                                        </p>
+                                          " {{ $item->comment }} "
+                                      </p>
+                                        <time style="font-size: 10px;" class="mt-0 mb-3"
+                                            datetime="{{ $item->created_at->format('Y-m-d') }}">{{ $item->created_at->format('d M, Y') }}</time>
                                     </div>
                                 @endforeach
                             </div>
