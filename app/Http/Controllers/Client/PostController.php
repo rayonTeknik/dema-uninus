@@ -7,6 +7,7 @@ use App\Models\Post;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -74,6 +75,7 @@ class PostController extends Controller
       $post = Post::where('slug', $slug)
     // ->with('category', 'comments', 'user')
     ->where('status', 1)
+    ->with('comments', 'user')
     ->orderBy('created_at', 'desc')
     ->firstOrFail();
 

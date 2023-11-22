@@ -46,7 +46,7 @@
 
                             <label class="form-label my-3">Hastag Postingan</label>
                             <div class="form-check mb-3">
-                                @foreach ($tags as $item)
+                                @foreach ($tag as $item)
                                     <div>
                                         <input class="form-check-input mb-3" type="checkbox" value="{{ $item->id }}"
                                             name="tags">
@@ -56,15 +56,21 @@
                             </div>
 
                             <label class="form-label my-3">Status Postingan</label>
-                            <div class="form-check form-switch m-3">
-                                <input class="form-check-input mb-3" type="checkbox" role="switch" name="status"
-                                    id="flexSwitchCheckDefault">
-                                <label class="form-check-label" for="flexSwitchCheckDefault">Aktifkan Postingan</label>
-                            </div>
+                            <div class="form-group">
+                              <label class="radio-inline">
+                                  <input id="yes" name="status" type="radio" value="1"
+                                      @if (isset($post->status) && $post->status === 1) checked @endif> Aktifkan Postingan
+                              </label>
+                              <label class="radio-inline">
+                                  <input id="no" name="status" type="radio" value="0"
+                                      @if (isset($post->status) && $post->status === 0) checked @endif> Nonaktifkan Postingan
+                              </label>
+                          </div>
 
                             <div class="my-3">
                                 <label class="form-label">Penulis</label>
-                                <input type="text" class="form-control mb-3" name="user_id">
+                                <input type="hidden" value="{{ $user->id }}" class="form-control mb-3" name="user_id">
+                                <input type="text" value="{{ $user->name }}" class="form-control mb-3" readonly>
                             </div>
 
                             <div class="text-center">

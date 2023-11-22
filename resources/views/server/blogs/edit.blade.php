@@ -53,29 +53,46 @@
 
                             <label class="form-label my-3">Hastag Postingan</label>
                             <div class="form-check mb-3">
-                              <div class="form-check mb-3">
-                                @foreach ($tags as $item)
-                                    <div>
-                                        <input class="form-check-input mb-3" type="checkbox" value="{{ $item->id }}"
-                                            name="tag[]" {{ $post->tags->pluck('id')->contains($item->id) ? 'checked' : '' }}>
-                                        <label class="form-check-label">{{ $item->title }}</label>
-                                    </div>
-                                @endforeach
-                            </div>
+                                <div class="form-check mb-3">
+                                    @foreach ($tags as $key => $value)
+                                        <div class="form-check">
+                                            <input name="tags[]" class="form-check-input" type="checkbox" id="gridCheck1"
+                                                value="{{ $value->id }}"
+                                                @if (isset($post)) @if (in_array($value->id, $post->tags->pluck('id')->all(), true)) checked @endif
+                                                @endif >
+                                            {{ $value->title }}
+                                            </label>
+                                        </div>
+                                    @endforeach
+                                </div>
 
                             </div>
 
                             <label class="form-label my-3">Status Postingan</label>
-                            <div class="form-check form-switch m-3">
-                              <input class="form-check-input mb-3" type="checkbox" role="switch" name="status"
-                                  id="flexSwitchCheckDefault" {{ $post->status ? 'checked' : '' }}>
-                              <label class="form-check-label" for="flexSwitchCheckDefault">Aktifkan Postingan</label>
-                          </div>                          
+                            <div class="form-group">
+                                <label class="radio-inline">
+                                    <input id="yes" name="status" type="radio" value="1"
+                                        @if (isset($post->status) && $post->status === 1) checked @endif> Aktifkan Postingan
+                                </label>
+                                <label class="radio-inline">
+                                    <input id="no" name="status" type="radio" value="0"
+                                        @if (isset($post->status) && $post->status === 0) checked @endif> Nonaktifkan Postingan
+                                </label>
+                            </div>
 
                             <div class="my-3">
                                 <label class="form-label">Penulis</label>
-                                <input type="text" class="form-control mb-3" name="user_id">
+
+                                @if ($post->user)
+                                    <input type="hidden" value="{{ $post->user->id }}" class="form-control mb-3"
+                                        name="user_id">
+                                    <input type="text" value="{{ $post->user->name }}" class="form-control mb-3"
+                                        readonly>
+                                @else
+                                    <span class="text-danger">No author information available</span>
+                                @endif
                             </div>
+
 
                             <div class="text-center">
                                 <a href="{{ route('index.post') }}" class="btn btn-warning my-4 mb-2">Kembali</a>

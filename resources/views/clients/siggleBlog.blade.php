@@ -119,18 +119,21 @@
     
                   <div id="comment-1" class="comment">
                     <div class="d-flex">
-                      <div class="comment-img"><img src="assets/img/blog/comments-1.jpg" alt=""></div>
+                      {{-- <div class="comment-img"><img src="assets/img/blog/comments-1.jpg" alt=""></div> --}}
+                      @foreach ($post->comments as $item)
                       <div>
-                        <h5><a href="">Georgia Reader</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
-                        <time datetime="2020-01-01">01 Jan, 2020</time>
-                        <p>
-                          Et rerum totam nisi. Molestiae vel quam dolorum vel voluptatem et et. Est ad aut sapiente quis molestiae est qui cum soluta.
-                          Vero aut rerum vel. Rerum quos laboriosam placeat ex qui. Sint qui facilis et.
-                        </p>
+                          <h5><a href="#">{{ $item->name }}</a> <a href="#" class="reply"></a></h5>
+                          <time datetime="{{ $item->created_at->format('Y-m-d') }}">{{ $item->created_at->format('d M, Y') }}</time>
+                          <p>
+                              {{ $item->comment }}
+                          </p>
                       </div>
+                  @endforeach
+                  
+
                     </div>
                   </div><!-- End comment #1 -->
-    
+{{--     
                   <div id="comment-2" class="comment">
                     <div class="d-flex">
                       <div class="comment-img"><img src="assets/img/blog/comments-2.jpg" alt=""></div>
@@ -204,28 +207,22 @@
                       </div>
                     </div>
     
-                  </div><!-- End comment #4 -->
+                  </div><!-- End comment #4 --> --}}
     
                   <div class="reply-form">
                     <h4>Leave a Reply</h4>
                     <p>Your email address will not be published. Required fields are marked * </p>
-                    <form action="">
+                    <form action="{{ route('comments.store') }}" method="POST">
+                      @csrf
+                      <input type="hidden" name="post_id" value="{{ $post->id }}">
                       <div class="row">
-                        <div class="col-md-6 form-group">
-                          <input name="name" type="text" class="form-control" placeholder="Your Name*">
-                        </div>
-                        <div class="col-md-6 form-group">
-                          <input name="email" type="text" class="form-control" placeholder="Your Email*">
+                        <div class="col form-group">
+                          <input name="name" type="text" class="form-control" placeholder="Your Name" required>
                         </div>
                       </div>
                       <div class="row">
                         <div class="col form-group">
-                          <input name="website" type="text" class="form-control" placeholder="Your Website">
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col form-group">
-                          <textarea name="comment" class="form-control" placeholder="Your Comment*"></textarea>
+                          <textarea name="comment" class="form-control" placeholder="Your Comment*" required></textarea>
                         </div>
                       </div>
                       <button type="submit" class="btn btn-primary">Post Comment</button>

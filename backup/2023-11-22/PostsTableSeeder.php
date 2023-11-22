@@ -47,20 +47,6 @@ class PostsTableSeeder extends Seeder
                 'created_at' => '2023-10-25 16:50:59',
                 'updated_at' => '2023-10-25 16:50:59',
             ),
-            2 => 
-            array (
-                'id' => 3,
-                'title' => 'tidurlah',
-                'slug' => 'tidurlah',
-                'img' => 'Blog_tidurlah_655da9672d28f.jpg',
-                'status' => 1,
-                'views' => '0',
-                'content' => '<p>tidur adalah jalan ninjaku</p>',
-                'category_id' => 2,
-                'user_id' => 1,
-                'created_at' => '2023-11-22 07:10:31',
-                'updated_at' => '2023-11-22 07:24:05',
-            ),
         ));
         
         

@@ -53,7 +53,7 @@
             </li>
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/admin">
                     <i class="fa-solid fa-people-group"></i>
                     <span>Pengurus</span></a>
             </li>
@@ -69,26 +69,32 @@
                     <i class="fa-solid fa-graduation-cap"></i>
                     <span>Beasiswa</span></a>
             </li>
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="/administrator">
+                    <i class="fa-solid fa-people-group"></i>
+                    <span>Data Admin</span></a>
+            </li>
 
 
-            
+
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBlog"
-                  aria-expanded="true" aria-controls="collapseBlog">
-                  <i class="fa-regular fa-newspaper"></i>
-                  <span>Blogs</span>
-              </a>
-              <div id="collapseBlog" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                  <div class="bg-white py-2 collapse-inner rounded">
-                      <h6 class="collapse-header">Blogs Components:</h6>
-                      <a class="collapse-item" href="{{ route('index.post') }}">List Blogs</a>
-                      <a class="collapse-item" href="{{ route('create.post') }}">New Blogs</a>
-                      <a class="collapse-item" href="{{ route('index.categoryPost') }}">Category</a>
-                      <a class="collapse-item" href="">Tags</a>
-                  </div>
-              </div>
-          </li>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBlog"
+                    aria-expanded="true" aria-controls="collapseBlog">
+                    <i class="fa-regular fa-newspaper"></i>
+                    <span>Blogs</span>
+                </a>
+                <div id="collapseBlog" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Blogs Components:</h6>
+                        <a class="collapse-item" href="{{ route('index.post') }}">List Blogs</a>
+                        <a class="collapse-item" href="{{ route('create.post') }}">New Blogs</a>
+                        <a class="collapse-item" href="{{ route('index.categoryPost') }}">Category</a>
+                        <a class="collapse-item" href="">Tags</a>
+                    </div>
+                </div>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -148,7 +154,8 @@
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Pages</span>
                 </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages"
+                    data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Login Screens:</h6>
                         <a class="collapse-item" href="login.html">Login</a>

@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Tag;
 use App\Models\Post;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Tag;
+use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 
 class PostController extends Controller
@@ -27,16 +28,21 @@ class PostController extends Controller
    */
   public function create()
   {
-    $tag = Tag::latest()->get();
-    $categories = Category::all();
-      return view("server.blogs.create", compact("categories", "tag"));
+      $user = Auth::user(); // Assuming Auth::user() returns an object
+      $tag = Tag::latest()->get();
+      $categories = Category::all();
+  
+      // dd($user);
+      return view("server.blogs.create", compact('categories', 'tag', 'user'));
   }
+  
 
   /**
    * Store a newly created resource in storage.
    */
   public function store(Request $request)
   {
+    $post['user_id'] = Auth::user()->id;
       $newFileName = ''; // Initialize the filename variable
 
       if ($request->hasFile('img')) {
@@ -68,11 +74,23 @@ class PostController extends Controller
    */
   public function edit($id, Request $request, Post $post)
   {
-      $post =Post::find($id);
+      // Retrieve the post from the database using the $id
+      $post = Post::find($id);
+  
+      // Check if the post exists
+      if (!$post) {
+          return "error cuy";
+      }
+  
+      // Assign the user_id to the post
+      $post['user_id'] = Auth::user()->id;
+  
       $tags = Tag::latest()->get();
       $categories = Category::all();
+  
       return view('server.blogs.edit', compact('post', 'tags', 'categories'));
   }
+  
 
   /**
    * Update the specified resource in storage.
@@ -81,7 +99,7 @@ class PostController extends Controller
   {
       // Find the post by its ID
       $post = Post::find($id);
-  
+      $post['user_id'] = Auth::user()->id;
       if (!$post) {
           return "error cuy";
       }
