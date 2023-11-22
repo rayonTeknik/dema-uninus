@@ -33,8 +33,8 @@
                                   </div>
                 
                                   <label class="form-label my-3">Famflet Gambar Format : JPG, PNG, JPEG</label>
-                                  <div class="mb-3">
-                                    <input type="file" class="form-control" name="img">
+                                  <div class="mb-3" >
+                                    <input type="file" class="form-control" name="img" value="pamflet-kosong" style="">
                                   </div>
                                   <div class="text-center">
                                     <a href="{{ route('index.agenda') }}" class="btn btn-warning w-30 my-4 mb-2">Kembali</a>

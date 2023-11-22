@@ -169,22 +169,22 @@
 
               <!-- Feature Icons -->
               <div class="row feature-icons" data-aos="fade-up">
-                  <h3>Quotes yang berharga</h3>
+                  <h3>Sambutan Presiden Mahasiswa</h3>
 
                   <div class="row">
 
-                      <div class="col-xl-4 text-center" data-aos="fade-right" data-aos-delay="100">
-                          <img src="{{ asset('img/muti.jpg') }}" class="img-fluid p-4"
+                      <div class="col-xl-6 text-center" data-aos="fade-right" data-aos-delay="100">
+                          <img src="{{ asset('img/mcah.png') }}" class="img-fluid p-4"
                               alt="">
                       </div>
 
-                      <div class="col-xl-8 d-flex content">
+                      <div class="col-xl-6 d-flex content">
                           <div class="row align-self-center gy-4">
 
                               <div class="col-md-12 icon-box" data-aos="fade-up">
                                 <i class="fa-sharp fa-solid fa-quote-left"></i>
                                   <div>
-                                      <h4>Abu Naum</h4>
+                                      {{-- <h4>Abu Naum</h4> --}}
                                       <p>Tidur dimanapun dan kapanpun adalah jalan ninjaku!!!!</p>
                                   </div>
                                   <i class="fa-solid fa-quote-right"></i>
@@ -215,25 +215,26 @@
                 <div class="row">
 
                   @foreach ($dataKegiatan as $item)
-                  <div class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                      <div class="box">
-                          <img src="{{ asset('img/'. $item['img']) }}" class="img-fluid" alt="">
-                          <h3>{{ $item['name'] }}</h3>
-                          <table class="table text-start">
-                            <tbody>
-                              <tr>
-                                <td>Waktu</td>
-                                <td>{{ $item['date'] }}</td>
-                              </tr>
-                              <tr>
-                                <td>Tempat</td>
-                                <td>{{ $item['location'] }}</td>
-                              </tr>
-                              </tr>
-                            </tbody>
-                          </table>
-                      </div>
-                  </div>
+
+                  <div class="container mt-5">
+                    <table class="table bordered-table table-kegiatan d-flex align-items-center justify-content-center">
+                        <thead>
+                            <tr>
+                              <th scope="col" class="date-header d-flex align-items-center justify-content-center"><time datetime="{{ $item->created_at->format('Y-m-d') }}">{{ $item->created_at->format('d M, Y') }}</time></th>
+                                <th scope="col" class="info-column">
+                                  <h4>{{ $item['name'] }}</h4>
+                                    <i class="bi bi-clock"></i>  <time datetime="{{ $item->created_at->format('Y-m-d') }}">{{ $item->created_at->format('d M, Y') }}</time> <br>
+                                    <i class="bi bi-geo-alt"></i> {{ $item['location'] }} 
+                                </th>
+                                <th>
+                                  <div> 
+                                    <img src="{{ asset('img/'. $item->img) }}" style="width:100px; height:70px; object-fit:cover" alt="">
+                                  </div>
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
               @endforeach
               
 
@@ -734,6 +735,44 @@
 
         </section><!-- End Clients Section -->
 
+            <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Galery</h2>
+          <p>Latest Galery</p>
+        </header>
+
+        <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+          @foreach ($galery as $item)
+              
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="portfolio-wrap">
+                    <img src="{{ asset('img/'. $item->img) }}" class="img-fluid " style="width: 370px; height:250px; object-fit:cover" alt="">
+                    <div class="portfolio-info">
+                        <h4>{{ $item->title }}</h4>
+                        {{-- <p>App</p> --}}
+                        <div class="portfolio-links">
+                            <a href="{{ asset('img/'. $item->img) }}" data-gallery="portfolioGallery"
+                                class="portfokio-lightbox" title="App 1"><i class="bi bi-plus"></i></a>
+                            <a href="{{ asset('img/'. $item->img) }}" title="More Details"><i class="bi bi-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          @endforeach
+
+        </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- End Portfolio Section -->
+
         <!-- ======= Recent Blog Posts Section ======= -->
         <section id="recent-blog-posts" class="recent-blog-posts">
 
@@ -746,39 +785,19 @@
 
                 <div class="row">
 
+                  @foreach ($postLatest ->take(3) as $item)
                     <div class="col-lg-4">
                         <div class="post-box">
-                            <div class="post-img"><img src="assets/img/blog/blog-1.jpg" class="img-fluid"
-                                    alt=""></div>
-                            <span class="post-date">Tue, September 15</span>
-                            <h3 class="post-title">Eum ad dolor et. Autem aut fugiat debitis voluptatem consequuntur sit
+                            <div class="post-img"><img src="{{ asset('img/'. $item->img) }}" class="img-fluid"
+                                    alt="" style="width: 400px; height:250px; object-fit:cover"></div>
+                            <span class="post-date"><time datetime="{{ $item->created_at->format('Y-m-d') }}">{{ $item->created_at->format('d M, Y') }}</time></span>
+                            <h3 class="post-title">{{ $item->title }}
                             </h3>
-                            <a href="blog-single.html" class="readmore stretched-link mt-auto"><span>Read More</span><i
+                            <a href="/article-dema-uninus/{{ $item->slug }}" class="readmore stretched-link mt-auto"><span>Read More</span><i
                                     class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
-
-                    <div class="col-lg-4">
-                        <div class="post-box">
-                            <div class="post-img"><img src="assets/img/blog/blog-2.jpg" class="img-fluid"
-                                    alt=""></div>
-                            <span class="post-date">Fri, August 28</span>
-                            <h3 class="post-title">Et repellendus molestiae qui est sed omnis voluptates magnam</h3>
-                            <a href="blog-single.html" class="readmore stretched-link mt-auto"><span>Read More</span><i
-                                    class="bi bi-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="post-box">
-                            <div class="post-img"><img src="assets/img/blog/blog-3.jpg" class="img-fluid"
-                                    alt=""></div>
-                            <span class="post-date">Mon, July 11</span>
-                            <h3 class="post-title">Quia assumenda est et veritatis aut quae</h3>
-                            <a href="blog-single.html" class="readmore stretched-link mt-auto"><span>Read More</span><i
-                                    class="bi bi-arrow-right"></i></a>
-                        </div>
-                    </div>
+                    @endforeach
 
                 </div>
 
