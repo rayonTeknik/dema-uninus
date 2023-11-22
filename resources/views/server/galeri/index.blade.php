@@ -18,38 +18,36 @@
                               </div>
                               <div class="card-body">
                                 <div class="table-responsive p-0">
-                                  <a href="{{ route('create.galeri') }}" class="badge badge-sm bg-gradient-success m-4" >Tambah</a>
+                                  <a href="{{ route('create.galeri') }}" class="btn btn-success m-4" >Tambah</a>
                                   <table class="table align-items-center mb-0">
                                     <thead>
                                       <tr>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">No</th>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Images</th>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Title</th>
-                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
+                                        <th class=" text-center">No</th>
+                                        <th class="">Images</th>
+                                        <th class=" ps-2">Title</th>
+                                        <th class="text-center ">Action</th>
                                       </tr>
                                     </thead>
                                     <tbody>
                                       @foreach ($galeri as $item)
                                       <tr>
-                                        <td class="d-flex justify-content-center">{{ $loop->iteration }}</td>
+                                        <td class="">{{ $loop->iteration }}</td>
                                         <td>
-                                          <div class="d-flex px-2 py-1">
                                             <div>
-                                              <img src="{{ asset('img/'.$item->img) }}" class="avatar avatar-sm me-3 border-radius-lg" style="object-fit: cover">
+                                              <img src="{{ asset('img/'.$item->img) }}" style="width: 30px;height:30px; object-fit:cover" class="avatar avatar-sm me-3 border-radius-lg" style="object-fit: cover">
                                             </div>
-                                          </div>
                                         </td>
                                         <td>
-                                          <p class="text-xs font-weight-bold mb-0">{{ $item->title }}</p>
+                                          <p class="">{{ $item->title }}</p>
                                         </td>
                         
-                                        <td class="align-middle text-center text-sm">
+                                        <td class="">
                                           
                                           <form action="{{ route('galeri.destroy', $item->id) }}" method="POST">
-                                          <a href="/admin/galeri/edit/{{ $item->id }}" class="badge badge-sm bg-gradient-warning" >Edit</a>
+                                          <a href="/admin/galeri/edit/{{ $item->id }}" class="btn btn-warning" >Edit</a>
                                             @csrf
                                             @method('DELETE')
-                                              <button type="submit" class="badge badge-sm bg-gradient-danger" 
+                                              <button type="submit" class="btn btn-danger" 
                                               onclick="return confirm
                                             ('Apakah Anda yakin ingin menghapus gambar ini?')">Hapus</button>
                                           </form>
