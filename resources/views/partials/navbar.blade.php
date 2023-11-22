@@ -5,7 +5,7 @@
 
       <a href="index.html" class="logo d-flex align-items-center">
         <img src="{{ asset('img/dema.png') }}" alt="">
-        <span>UNINUS</span>
+        <span>DEMA UNINUS</span>
       </a>
 
       <nav id="navbar" class="navbar">
@@ -59,7 +59,7 @@
             </ul>
           </li> --}}
 
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Ruang Aspirasi</a></li>
           <li><a class="getstarted scrollto" href="/admin/dashboard">Get Started</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

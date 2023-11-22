@@ -79,8 +79,9 @@ class PostController extends Controller
     ->orderBy('created_at', 'desc')
     ->firstOrFail();
 
-
-      // dd($post);
+    // agar sekali dilihat dihitung 3
+      $post->increment('views', 3);
+      $post->save();
       return view('clients.siggleBlog', compact('post'));
     }
 }
