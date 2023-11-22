@@ -53,7 +53,7 @@
             </li>
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="/admin">
+                <a class="nav-link" href="/admin/pengurus">
                     <i class="fa-solid fa-people-group"></i>
                     <span>Pengurus</span></a>
             </li>
