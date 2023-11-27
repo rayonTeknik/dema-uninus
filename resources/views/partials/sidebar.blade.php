@@ -65,7 +65,7 @@
             </li>
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ route('index.beasiswa') }}">
                     <i class="fa-solid fa-graduation-cap"></i>
                     <span>Beasiswa</span></a>
             </li>

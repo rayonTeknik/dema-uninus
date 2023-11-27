@@ -14,7 +14,7 @@ class BeasiswaController extends Controller
     public function index()
     {
       $beasiswa =Beasiswa::all();
-      return view("admin.beasiswa.index", compact("beasiswa"));
+      return view("server.beasiswa.index", compact("beasiswa"));
   }
 
     /**
@@ -22,7 +22,7 @@ class BeasiswaController extends Controller
      */
     public function create()
     {
-        return view('admin.beasiswa.create');
+        return view('server.beasiswa.create');
     }
 
     /**
@@ -59,7 +59,7 @@ class BeasiswaController extends Controller
     public function show($id, Beasiswa $beasiswa)
     {
         $beasiswa = Beasiswa::find($id);
-        return view('admin.beasiswa.show', compact('beasiswa'));
+        return view('server.beasiswa.show', compact('beasiswa'));
     }
 
     /**
@@ -68,7 +68,7 @@ class BeasiswaController extends Controller
     public function edit($id, Beasiswa $beasiswa)
     {
         $beasiswa = Beasiswa::find($id);
-        return view('admin.beasiswa.edit', compact('beasiswa'));
+        return view('server.beasiswa.edit', compact('beasiswa'));
     }
 
     /**
