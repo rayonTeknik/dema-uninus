@@ -14,6 +14,8 @@ use App\Http\Controllers\Client\AboutController;
 use App\Http\Controllers\Client\CommentController;
 use App\Http\Controllers\Admin\CategoryPostController;
 use App\Http\Controllers\Admin\PostController as AdminPostController;
+use App\Http\Controllers\Client\AspirasiController as ClientAspirasiController;
+use App\Http\Controllers\Client\Beasiswa;
 use App\Http\Controllers\Client\HomeController as ClientHomeController;
 use App\Http\Controllers\Client\GaleriController as ClientGaleriController;
 
@@ -36,6 +38,10 @@ use App\Http\Controllers\Client\GaleriController as ClientGaleriController;
 
 Route::get('/',[ClientHomeController::class, 'index'])->name('client.home');
 Route::get('/about',[AboutController::class, 'index'])->name('client.about');
+Route::get('/beasiswa',[Beasiswa::class, 'index'])->name('client.beasiswa');
+Route::get('/beasiswa/{id}',[Beasiswa::class, 'show']);
+Route::get('/aspirasi',[ClientAspirasiController::class, 'index'])->name('client.aspirasi');
+Route::post('/aspirasi/create',[ClientAspirasiController::class, 'create'])->name('client.aspirasiCreate');
 Route::get('/galeri',[ClientGaleriController::class, 'index'])->name('client.galeri');
 Route::get('/blog',[PostController::class, 'index'])->name('client.blog');
 Route::get('/article-dema-uninus/{slug}',[PostController::class, 'show'])->name('client.blogShow');
