@@ -72,16 +72,23 @@ class PostController extends Controller
     // }
 
     public function show($slug){
+      $categories = Category::with(['post' => function ($query) {
+        $query->where('status', 1);
+    }])->get();
+    $postLatest = Post::where('status', 1)->latest()->get();
       $post = Post::where('slug', $slug)
-    // ->with('category', 'comments', 'user')
     ->where('status', 1)
     ->with('comments', 'user')
     ->orderBy('created_at', 'desc')
     ->firstOrFail();
 
+    $tags=Tag::with(['posts' => function ($query) {
+      $query->where('status', 1);
+      }])->get();
     // agar sekali dilihat dihitung 3
       $post->increment('views', 3);
       $post->save();
-      return view('clients.siggleBlog', compact('post'));
+      // dd($tags);
+      return view('clients.siggleBlog', compact('post', 'categories', 'postLatest', 'tags'));
     }
 }

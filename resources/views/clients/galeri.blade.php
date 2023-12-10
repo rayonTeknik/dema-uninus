@@ -36,7 +36,7 @@
                               {{-- <p>App</p> --}}
                               <div class="portfolio-links">
                                   <a href="{{ asset('img/'. $item->img) }}" data-gallery="portfolioGallery"
-                                      class="portfokio-lightbox" title="App 1"><i class="bi bi-plus"></i></a>
+                                      class="portfokio-lightbox" title="{{ $item->title }}"><i class="bi bi-plus"></i></a>
                                   <a href="{{ asset('img/'. $item->img) }}" title="More Details"><i class="bi bi-link"></i></a>
                               </div>
                           </div>

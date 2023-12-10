@@ -19,7 +19,7 @@
                     <div class="card-body">
                         <div class="table-responsive p-0">
                             <a href="{{ route('create.pengurus') }}"
-                                class="badge badge-sm bg-gradient-success m-4">Tambah</a>
+                                class="btn btn-success m-4">Tambah</a>
                             <table class="table align-items-center mb-0">
                                 <thead>
                                     <tr>
@@ -42,31 +42,31 @@
                                 <tbody>
                                     @foreach ($pengurus as $item)
                                         <tr>
-                                            <td class="d-flex justify-content-center">{{ $loop->iteration }}</td>
+                                            <td >{{ $loop->iteration }}</td>
                                             <td>
                                                 <div class="d-flex px-2 py-1">
                                                     <div>
                                                         <img src="{{ asset('img/' . $item->img) }}"
                                                             class="avatar avatar-sm me-3 border-radius-lg"
-                                                            style="object-fit: cover">
+                                                            style=" width:60px; height:60px; object-fit: cover">
                                                     </div>
                                                 </div>
                                             </td>
                                             <td>
-                                                <p class="text-xs font-weight-bold mb-0">{{ $item->name }}</p>
+                                                <p class="">{{ $item->name }}</p>
                                             </td>
                                             <td>
-                                                <p class="text-xs font-weight-bold mb-0">{{ $item->jabatan }}</p>
+                                                <p class="">{{ $item->jabatan }}</p>
                                             </td>
 
                                             <td class="align-middle text-center text-sm">
 
                                                 <form action="{{ route('pengurus.destroy', $item->id) }}" method="POST">
                                                     <a href="/admin/pengurus/edit/{{ $item->id }}"
-                                                        class="badge badge-sm bg-gradient-warning">Edit</a>
+                                                        class="btn btn-warning">Edit</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="badge badge-sm bg-gradient-danger"
+                                                    <button type="submit" class="btn btn-danger"
                                                         onclick="return confirm
                                             ('Apakah Anda yakin ingin menghapus pengurus ini?')
 ">Hapus</button>
